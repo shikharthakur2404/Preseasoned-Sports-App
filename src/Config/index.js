@@ -1,10 +1,10 @@
+// Secrets (especially SENDBIRD_API_TOKEN) must come from env — never commit live values.
+// Copy .env.example → .env and set SENDBIRD_API_TOKEN (and optionally SENDBIRD_APP_ID).
+// For React Native builds, load .env via your usual tooling (e.g. react-native-config / babel dotenv).
+const env = (typeof process !== 'undefined' && process.env) || {}
+
 export const Config = {
-  // live
-  API_URL: 'http://35.154.249.193:8009/',
-  SENDBIRD_APP_ID: '2BABBB2F-9FB2-403C-BAB1-C05142E53C8B',
-  SENDBIRD_API_TOKEN: '4dbc384a744763052d66719bda6bdbfc9758b1c1',
-  // dev
-  // API_URL: 'http://65.2.182.242:8009/',
-  // SENDBIRD_APP_ID: 'B8AE96CE-C3D9-480A-8444-2DC3127527A6',
-  // SENDBIRD_API_TOKEN: 'a343223f059a53f463aa82c037c2b26f0b6ce9db',
+  API_URL: env.API_URL || 'http://35.154.249.193:8009/',
+  SENDBIRD_APP_ID: env.SENDBIRD_APP_ID || '',
+  SENDBIRD_API_TOKEN: env.SENDBIRD_API_TOKEN || '',
 }
